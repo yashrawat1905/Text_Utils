@@ -5,7 +5,7 @@ import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import React, { useState } from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Routes,
   Route,
   Link
@@ -40,7 +40,7 @@ function App() {
   }
 return (
 <>
-<Router>
+<HashRouter basename='/Text_Utils'>
 <Navbar title = "TextUtils" aboutText = "About" mode = {mode} toggleMode = {toggleMode} /> 
 <Alert alert = {alert}/>
 <div className='container my-5'>
@@ -52,7 +52,7 @@ return (
       {<TextForm showAlert = {showAlert} heading = "Enter the text below to analyze" mode = {mode}/>} />
     </Routes>
 </div>
-</Router>
+</HashRouter>
 </>
 );
 }
